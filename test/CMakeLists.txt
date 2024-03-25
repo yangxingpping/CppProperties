@@ -1,16 +1,5 @@
-#FetchContent is only available for version 3.14 and upwards and we need it to get googletest
-include(FetchContent)
 
 set(gtest_force_shared_crt ON CACHE BOOL "Always use msvcrt.dll" FORCE)
-# Download and unpack googletest at configure time
-FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG        master
-)
-# Add googletest directly to our build. This defines
-# the gtest and gtest_main targets.
-FetchContent_MakeAvailable(googletest)
 
 # Now simply link against gtest or gtest_main as needed. Eg
 add_executable(CppProperties_test)
